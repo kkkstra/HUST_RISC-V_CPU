@@ -1,0 +1,485 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Tue Sep 10 13:12:41 2024
+# Process ID: 30976
+# Current directory: C:/Data/HUST_RISC-V_CPU/FPGA/HUST-RISCV/HUST-RISCV.runs/synth_1
+# Command line: vivado.exe -log Top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top.tcl
+# Log file: C:/Data/HUST_RISC-V_CPU/FPGA/HUST-RISCV/HUST-RISCV.runs/synth_1/Top.vds
+# Journal file: C:/Data/HUST_RISC-V_CPU/FPGA/HUST-RISCV/HUST-RISCV.runs/synth_1\vivado.jou
+# Running On        :ThinkBook
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :22631
+# Processor Detail  :12th Gen Intel(R) Core(TM) i5-12500H
+# CPU Frequency     :3110 MHz
+# CPU Physical cores:12
+# CPU Logical cores :16
+# Host memory       :16892 MB
+# Swap memory       :14438 MB
+# Total Virtual     :31331 MB
+# Available Virtual :5514 MB
+#-----------------------------------------------------------
+source Top.tcl -notrace
+create_project: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 504.895 ; gain = 201.863
+Command: read_checkpoint -auto_incremental -incremental C:/Data/HUST_RISC-V_CPU/FPGA/HUST-RISCV/HUST-RISCV.srcs/utils_1/imports/synth_1/Top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Data/HUST_RISC-V_CPU/FPGA/HUST-RISCV/HUST-RISCV.srcs/utils_1/imports/synth_1/Top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+read_checkpoint: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 509.199 ; gain = 4.305
+Command: synth_design -top Top -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Device 21-9227] Part: xc7a100tcsg324-1 does not have CEAM library.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 47184
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1371.938 ; gain = 446.461
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Top' [C:/Data/HUST_RISC-V_CPU/FPGA/src/top.sv:76]
+INFO: [Synth 8-6157] synthesizing module 'HexDisplay' [C:/Data/HUST_RISC-V_CPU/FPGA/src/top.sv:54]
+	Parameter N bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ClockDiv' [C:/Data/HUST_RISC-V_CPU/FPGA/src/top.sv:4]
+	Parameter N bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ClockDiv' (0#1) [C:/Data/HUST_RISC-V_CPU/FPGA/src/top.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'SegDecoder' [C:/Data/HUST_RISC-V_CPU/FPGA/src/top.sv:28]
+INFO: [Synth 8-6155] done synthesizing module 'SegDecoder' (0#1) [C:/Data/HUST_RISC-V_CPU/FPGA/src/top.sv:28]
+INFO: [Synth 8-6155] done synthesizing module 'HexDisplay' (0#1) [C:/Data/HUST_RISC-V_CPU/FPGA/src/top.sv:54]
+INFO: [Synth 8-6157] synthesizing module 'ClockDiv__parameterized0' [C:/Data/HUST_RISC-V_CPU/FPGA/src/top.sv:4]
+	Parameter N bound to: 3125000 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ClockDiv__parameterized0' (0#1) [C:/Data/HUST_RISC-V_CPU/FPGA/src/top.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'SingleCycleCPU' [C:/Data/HUST_RISC-V_CPU/FPGA/src/single_cycle_cpu.sv:4]
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter PATH bound to: C:/Data/HUST_RISC-V_CPU/FPGA/bin/risc-v-benchmark_ccab.hex - type: string 
+	Parameter ROM_SIZE bound to: 10 - type: integer 
+	Parameter RAM_SIZE bound to: 10 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Register' [C:/Data/HUST_RISC-V_CPU/FPGA/src/register.sv:4]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Register' (0#1) [C:/Data/HUST_RISC-V_CPU/FPGA/src/register.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'ROM' [C:/Data/HUST_RISC-V_CPU/FPGA/src/rom.sv:4]
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter PATH bound to: C:/Data/HUST_RISC-V_CPU/FPGA/bin/risc-v-benchmark_ccab.hex - type: string 
+	Parameter SIZE bound to: 10 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'C:/Data/HUST_RISC-V_CPU/FPGA/bin/risc-v-benchmark_ccab.hex' is read successfully [C:/Data/HUST_RISC-V_CPU/FPGA/src/rom.sv:17]
+INFO: [Synth 8-6155] done synthesizing module 'ROM' (0#1) [C:/Data/HUST_RISC-V_CPU/FPGA/src/rom.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'Controller' [C:/Data/HUST_RISC-V_CPU/FPGA/src/controller.sv:6]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Controller' (0#1) [C:/Data/HUST_RISC-V_CPU/FPGA/src/controller.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'RegFile' [C:/Data/HUST_RISC-V_CPU/FPGA/src/register.sv:17]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RegFile' (0#1) [C:/Data/HUST_RISC-V_CPU/FPGA/src/register.sv:17]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Data/HUST_RISC-V_CPU/FPGA/src/alu.sv:6]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Data/HUST_RISC-V_CPU/FPGA/src/alu.sv:17]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [C:/Data/HUST_RISC-V_CPU/FPGA/src/alu.sv:6]
+WARNING: [Synth 8-7071] port 'result2' of module 'ALU' is unconnected for instance 'alu' [C:/Data/HUST_RISC-V_CPU/FPGA/src/single_cycle_cpu.sv:70]
+WARNING: [Synth 8-7023] instance 'alu' of module 'ALU' has 8 connections declared, but only 7 given [C:/Data/HUST_RISC-V_CPU/FPGA/src/single_cycle_cpu.sv:70]
+INFO: [Synth 8-6157] synthesizing module 'RAM' [C:/Data/HUST_RISC-V_CPU/FPGA/src/ram.sv:3]
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter SIZE bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RAM' (0#1) [C:/Data/HUST_RISC-V_CPU/FPGA/src/ram.sv:3]
+WARNING: [Synth 8-689] width (32) of port connection 'addr' does not match port width (12) of module 'RAM' [C:/Data/HUST_RISC-V_CPU/FPGA/src/single_cycle_cpu.sv:80]
+INFO: [Synth 8-6157] synthesizing module 'Interrupt' [C:/Data/HUST_RISC-V_CPU/FPGA/src/interrupt.sv:4]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Data/HUST_RISC-V_CPU/FPGA/src/interrupt.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'Interrupt' (0#1) [C:/Data/HUST_RISC-V_CPU/FPGA/src/interrupt.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'SingleCycleCPU' (0#1) [C:/Data/HUST_RISC-V_CPU/FPGA/src/single_cycle_cpu.sv:4]
+WARNING: [Synth 8-7071] port 'PCOut' of module 'SingleCycleCPU' is unconnected for instance 'cpu' [C:/Data/HUST_RISC-V_CPU/FPGA/src/top.sv:100]
+WARNING: [Synth 8-7023] instance 'cpu' of module 'SingleCycleCPU' has 5 connections declared, but only 4 given [C:/Data/HUST_RISC-V_CPU/FPGA/src/top.sv:100]
+INFO: [Synth 8-6155] done synthesizing module 'Top' (0#1) [C:/Data/HUST_RISC-V_CPU/FPGA/src/top.sv:76]
+WARNING: [Synth 8-7129] Port LED[15] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[14] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[13] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[12] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[11] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[10] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[9] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[8] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[7] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[6] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[5] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[4] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[3] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[2] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[15] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[14] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[13] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[12] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[11] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[10] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[9] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[8] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[7] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[6] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[5] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[4] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[3] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[2] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[1] in module Top is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:21 . Memory (MB): peak = 2252.562 ; gain = 1327.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:21 . Memory (MB): peak = 2252.562 ; gain = 1327.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:21 . Memory (MB): peak = 2252.562 ; gain = 1327.086
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:02 . Memory (MB): peak = 2252.562 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Data/HUST_RISC-V_CPU/FPGA/HUST-RISCV/HUST-RISCV.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]
+Finished Parsing XDC File [C:/Data/HUST_RISC-V_CPU/FPGA/HUST-RISCV/HUST-RISCV.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Data/HUST_RISC-V_CPU/FPGA/HUST-RISCV/HUST-RISCV.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 2475.855 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.186 . Memory (MB): peak = 2475.855 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:47 . Memory (MB): peak = 2475.855 ; gain = 1550.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:47 . Memory (MB): peak = 2475.855 ; gain = 1550.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:47 . Memory (MB): peak = 2475.855 ; gain = 1550.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Preparing Guide Design
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6702] IncrSynth : Design change found in an area of the design that prevents previous synthesis information being used, Reverting to default synthesis
+---------------------------------------------------------------------------------
+Finished Doing Graph Differ : Time (s): cpu = 00:00:13 ; elapsed = 00:00:52 . Memory (MB): peak = 2475.855 ; gain = 1550.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Preparing Guide Design : Time (s): cpu = 00:00:13 ; elapsed = 00:00:52 . Memory (MB): peak = 2475.855 ; gain = 1550.379
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'result_reg' [C:/Data/HUST_RISC-V_CPU/FPGA/src/alu.sv:18]
+WARNING: [Synth 8-327] inferring latch for variable 'result2_reg' [C:/Data/HUST_RISC-V_CPU/FPGA/src/alu.sv:21]
+WARNING: [Synth 8-327] inferring latch for variable 'ge_reg' [C:/Data/HUST_RISC-V_CPU/FPGA/src/alu.sv:32]
+WARNING: [Synth 8-327] inferring latch for variable 'less_reg' [C:/Data/HUST_RISC-V_CPU/FPGA/src/alu.sv:31]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:41 ; elapsed = 00:02:32 . Memory (MB): peak = 2475.855 ; gain = 1550.379
+---------------------------------------------------------------------------------
+
+
+Incremental Synthesis Report Summary:
+
+1. Incremental synthesis run: no
+
+   Reason for not running incremental synthesis : Design change found in an area of the design that prevents previous synthesis information being used
+
+
+INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   64 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 6     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 1059  
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 5124  
+	   4 Input   32 Bit        Muxes := 1025  
+	 220 Input   32 Bit        Muxes := 1     
+	  14 Input   32 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 10    
+	   2 Input    5 Bit        Muxes := 3     
+	   2 Input    4 Bit        Muxes := 5     
+	   2 Input    3 Bit        Muxes := 21    
+	   2 Input    2 Bit        Muxes := 5     
+	   2 Input    1 Bit        Muxes := 71    
+	  14 Input    1 Bit        Muxes := 5     
+	   3 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7129] Port LED[15] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[14] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[13] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[12] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[11] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[10] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[9] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[8] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[7] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[6] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[5] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[4] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[3] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[2] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[15] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[14] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[13] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[12] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[11] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[10] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[9] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[8] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[7] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[6] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[5] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[4] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[3] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[2] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[1] in module Top is either unconnected or has no load
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+DSP Report: Generating DSP result0, operation Mode is: A*B.
+DSP Report: operator result0 is absorbed into DSP result0.
+DSP Report: operator result0 is absorbed into DSP result0.
+DSP Report: Generating DSP result0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator result0 is absorbed into DSP result0.
+DSP Report: operator result0 is absorbed into DSP result0.
+DSP Report: Generating DSP result0, operation Mode is: A*B.
+DSP Report: operator result0 is absorbed into DSP result0.
+DSP Report: operator result0 is absorbed into DSP result0.
+DSP Report: Generating DSP result0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator result0 is absorbed into DSP result0.
+DSP Report: operator result0 is absorbed into DSP result0.
+WARNING: [Synth 8-7129] Port addr[9] in module ROM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[8] in module ROM is either unconnected or has no load
+WARNING: [Synth 8-3332] Sequential element (result2_reg[31]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[30]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[29]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[28]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[27]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[26]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[25]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[24]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[23]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[22]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[21]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[20]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[19]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[18]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[17]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[16]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[15]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[14]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[13]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[12]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[11]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[10]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[9]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[8]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[7]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[6]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[5]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[4]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[3]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[2]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[1]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (result2_reg[0]) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (ge_reg) is unused and will be removed from module ALU.
+WARNING: [Synth 8-3332] Sequential element (less_reg) is unused and will be removed from module ALU.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:04:11 . Memory (MB): peak = 2475.855 ; gain = 1550.379
+---------------------------------------------------------------------------------
+ Sort Area is SingleCycleCPU__GC0 result0_0 : 0 0 : 2701 5044 : Used 1 time 0
+ Sort Area is SingleCycleCPU__GC0 result0_0 : 0 1 : 2343 5044 : Used 1 time 0
+ Sort Area is SingleCycleCPU__GC0 result0_3 : 0 0 : 2339 4365 : Used 1 time 0
+ Sort Area is SingleCycleCPU__GC0 result0_3 : 0 1 : 2026 4365 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|ALU         | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:52 ; elapsed = 00:04:23 . Memory (MB): peak = 2475.855 ; gain = 1550.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:04:26 . Memory (MB): peak = 2475.855 ; gain = 1550.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:57 ; elapsed = 00:04:35 . Memory (MB): peak = 2475.855 ; gain = 1550.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:03 ; elapsed = 00:04:51 . Memory (MB): peak = 2475.855 ; gain = 1550.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:03 ; elapsed = 00:04:52 . Memory (MB): peak = 2475.855 ; gain = 1550.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:04 ; elapsed = 00:04:54 . Memory (MB): peak = 2475.855 ; gain = 1550.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:04 ; elapsed = 00:04:55 . Memory (MB): peak = 2475.855 ; gain = 1550.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:04 ; elapsed = 00:04:56 . Memory (MB): peak = 2475.855 ; gain = 1550.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:04 ; elapsed = 00:04:56 . Memory (MB): peak = 2475.855 ; gain = 1550.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping  | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|ALU         | A*B          | 17     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | PCIN>>17+A*B | 17     | 15     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     4|
+|2     |CARRY4  |   368|
+|3     |DSP48E1 |     3|
+|4     |LUT1    |    68|
+|5     |LUT2    |   895|
+|6     |LUT3    |  1912|
+|7     |LUT4    |  1005|
+|8     |LUT5    |  1902|
+|9     |LUT6    | 22327|
+|10    |MUXF7   |  7944|
+|11    |MUXF8   |  3838|
+|12    |FDRE    | 33888|
+|13    |FDSE    |     8|
+|14    |LD      |   131|
+|15    |IBUF    |     2|
+|16    |OBUF    |    18|
+|17    |OBUFT   |    14|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:04 ; elapsed = 00:04:56 . Memory (MB): peak = 2475.855 ; gain = 1550.379
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 70 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:56 ; elapsed = 00:04:39 . Memory (MB): peak = 2475.855 ; gain = 1327.086
+Synthesis Optimization Complete : Time (s): cpu = 00:01:04 ; elapsed = 00:04:57 . Memory (MB): peak = 2475.855 ; gain = 1550.379
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.662 . Memory (MB): peak = 2475.855 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 12284 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'Top' is not ideal for floorplanning, since the cellview 'RAM' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 2475.855 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 131 instances were transformed.
+  LD => LDCE: 131 instances
+
+Synth Design complete | Checksum: ac69d792
+INFO: [Common 17-83] Releasing license: Synthesis
+56 Infos, 105 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:15 ; elapsed = 00:05:28 . Memory (MB): peak = 2475.855 ; gain = 1966.656
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.085 . Memory (MB): peak = 2475.855 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Data/HUST_RISC-V_CPU/FPGA/HUST-RISCV/HUST-RISCV.runs/synth_1/Top.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 2475.855 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_utilization -file Top_utilization_synth.rpt -pb Top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Sep 10 13:18:32 2024...

@@ -1,10 +1,9 @@
 `timescale 1ns / 1ps
 
-`include "controller.svh"
 
-
-module SingleCycleCPU(
-    clk, rst, ledData, halt
+module SingleCycleCPU (
+    clk, rst, ledData, halt,
+    PCOut
 );
     parameter WIDTH = 32;
     parameter PATH = "";
@@ -12,13 +11,13 @@ module SingleCycleCPU(
     parameter RAM_SIZE = 10;
 
     input clk, rst;
-    output [WIDTH-1:0] ledData;
+    output [WIDTH-1:0] ledData, PCOut;
     output halt;
 
     wire [WIDTH-1:0] PC, IR;
     reg [WIDTH-1:0] PCNext;
     wire [4:0] rs1, rs2, rd;
-    wire [WIDTH-1:0] imm;
+    wire [WIDTH-1:0] imm, R1, R2;
     reg [WIDTH-1:0] rDin;
     wire [WIDTH-1:0] aluResult, memData;
     wire aluEqual, aluGe, aluLess;
@@ -48,15 +47,15 @@ module SingleCycleCPU(
         .ir(IR), .rs1(rs1), .rs2(rs2), .rd(rd), .imm(imm), .signal(signal)
     );
 
-    Regfile #(
+    RegFile #(
         .WIDTH(WIDTH)
     ) regfile (
-        .clk(clk), .rst(rst), .we(1'b1),
+        .clk(clk), .rst(rst), .we(signal.regWrite),
         .rW(rd), .rA(rs1), .rB(rs2), .din(rDin),
         .r1(R1), .r2(R2)
     );
     always @* begin
-        case (sig.rDinSrc)
+        case (signal.rDinSrc)
             1: rDin = aluResult;
             2: rDin = memData;
             3: rDin = PC + 4;
@@ -69,7 +68,7 @@ module SingleCycleCPU(
     ALU #(
         .WIDTH(WIDTH)
     ) alu (
-        .X(R1), .Y(sig.aluSrcB ? imm : R2), .S(sig.aluOp),
+        .X(R1), .Y(signal.aluSrcB ? imm : R2), .S(signal.aluOp),
         .result(aluResult), .equal(aluEqual), .ge(aluGe), .less(aluLess)
     );
 
@@ -89,4 +88,5 @@ module SingleCycleCPU(
         .ledData(ledData), .halt(halt)
     );
 
+    assign PCOut = PC;
 endmodule

@@ -12,16 +12,16 @@ module Controller(
     output [WIDTH-1:0] imm;
     output Signal signal;
 
-    assign rs1 = sig.rs1 ? (sig.irOp == IR_ECALL ? 5'h11 : ir[19:15]) : 0;
-    assign rs2 = sig.rs2 ? (sig.irOp == IR_ECALL ? 5'h0a : ir[24:20]) : 0;
-    assign rd = sig.rDinSrc ? (sig.irOp == IR_ECALL ? 5'h0b : ir[11:7]) : 0;
+    assign rs1 = signal.rs1 ? (signal.irOp == IR_ECALL ? 5'h11 : ir[19:15]) : 0;
+    assign rs2 = signal.rs2 ? (signal.irOp == IR_ECALL ? 5'h0a : ir[24:20]) : 0;
+    assign rd = signal.rDinSrc ? (signal.irOp == IR_ECALL ? 5'h0b : ir[11:7]) : 0;
 
     assign imm =
-        sig.irType == IR_TYPE_I ? signed'(ir[31:20]) :
-        sig.irType == IR_TYPE_S ? signed'({ir[31:25], ir[11:7]}) :
-        sig.irType == IR_TYPE_B ? signed'({ir[31], ir[7], ir[30:25], ir[11:8]}) :
-        sig.irType == IR_TYPE_U ? signed'(ir[31:12]) :
-        sig.irType == IR_TYPE_J ? signed'({ir[31], ir[19:12], ir[20], ir[30:21]}) : 0;
+        signal.irType == IR_TYPE_I ? signed'(ir[31:20]) :
+        signal.irType == IR_TYPE_S ? signed'({ir[31:25], ir[11:7]}) :
+        signal.irType == IR_TYPE_B ? signed'({ir[31], ir[7], ir[30:25], ir[11:8]}) :
+        signal.irType == IR_TYPE_U ? signed'(ir[31:12]) :
+        signal.irType == IR_TYPE_J ? signed'({ir[31], ir[19:12], ir[20], ir[30:21]}) : 0;
 
     assign signal =
         (ir & `IR_MASK_ADD) == `IR_CODE_ADD ?       `IR_SIGNAL_ADD :

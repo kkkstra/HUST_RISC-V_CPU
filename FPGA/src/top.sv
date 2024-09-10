@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 
-module Clock #(
+module ClockDiv #(
     parameter N = 10_000_000
 ) (
     clk, clk_N
@@ -46,61 +46,61 @@ module SegDecoder (
             4'b1100 : seg[7:0] = 8'b11000110;
             4'b1101 : seg[7:0] = 8'b10100001;
             4'b1110 : seg[7:0] = 8'b10000110;
-            default : seg[7:0] = 8'b10001110;
+            4'b1111 : seg[7:0] = 8'b10001110;
         endcase
     end
 endmodule
 
 module HexDisplay #(
-    parameter T = 16
+    parameter N = 1
 ) (
-    input rawClk,
+    input CLK,
     input int num,
-    output bit [7:0] an,
+    output reg [7:0] an,
     output [7:0] seg
 );
-    bit clk;
-    Clock #(.T(T)) clkDiv (rawClk, clk);
+    wire clk;
+    ClockDiv #(.N(N)) clockDiv (CLK, clk);
     
-    int pos;
-    bit [3:0] digit;
+    integer pos;
+    reg [3:0] digit;
     SegDecoder decoder (digit, seg);
     
     always @(posedge clk) begin
-        pos <= pos == 7? 0 : pos + 1;
+        pos <= pos == 7 ? 0 : pos + 1;
         an <= ~(1 << pos);
         digit <= num >> (pos << 2);
     end
 endmodule
 
 module Top(
-    input CLK100MHZ,
-    input RESETN,
+    input CLK,
+//    input RESET,
     input [15:0] SW,
-    input [4:0] BTN,
-    
-    inout PS2_CLK,
-    inout PS2_DATA,
     
     output [7:0] AN,
     output [7:0] SEG,
     output [15:0] LED
 );
-    localparam PATH = `"/path/to/program.hex`";
+    localparam PATH = "C:/Data/HUST_RISC-V_CPU/FPGA/bin/risc-v-benchmark_ccab.hex";
 
     // LED
-    int ledData;
-    HexDisplay #(.N(16)) display (CLK100MHZ, ledData, AN, SEG);
+    wire [31:0] ledData;
+    HexDisplay #(.N(16)) display (CLK, ledData, AN, SEG);
     
     // CPU
     wire clk, rst, halt;
-    assign rst = !RESETN;
-    Clock #(.N(2)) CPUClock (CLK100MHZ, clk);
+//    always @(posedge CLK) begin
+//        if (RESET) rst <= ~rst;
+//    end
+    assign rst = ~SW[0];
+    ClockDiv #(.N(3_125_000)) clockDiv (CLK, clk);
     SingleCycleCPU #(
         .WIDTH(32), .PATH(PATH), .ROM_SIZE(10), .RAM_SIZE(10)
     ) cpu (
         .clk(clk), .rst(rst), .ledData(ledData), .halt(halt)
     );
 
-    assign LED[0] = halt;
+    assign LED[0] = rst;
+    assign LED[1] = halt;
 endmodule

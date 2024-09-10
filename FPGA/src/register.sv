@@ -40,7 +40,7 @@ module RegFile(
             end
         end
         else if (we) begin
-            regs[rW] <= din;
+            if (rW) regs[rW] <= din;
         end
     end
 endmodule
