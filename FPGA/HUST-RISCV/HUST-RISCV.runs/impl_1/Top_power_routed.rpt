@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date             : Wed Sep 11 08:50:03 2024
+| Date             : Wed Sep 11 09:22:40 2024
 | Host             : ThinkBook running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_power_routed.rpt -pb Top_power_summary_routed.pb -rpx Top_power_routed.rpx
 | Design           : Top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 36.971 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 37.964 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 36.174                           |
+| Dynamic (W)              | 37.167                           |
 | Device Static (W)        | 0.797                            |
 | Effective TJA (C/W)      | 4.6                              |
 | Max Ambient (C)          | 0.0                              |
@@ -52,19 +52,19 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |    16.077 |    74565 |       --- |             --- |
-|   LUT as Logic |    13.668 |    26558 |     63400 |           41.89 |
+| Slice Logic    |    16.244 |    74565 |       --- |             --- |
+|   LUT as Logic |    13.835 |    26559 |     63400 |           41.89 |
 |   CARRY4       |     2.234 |      370 |     15850 |            2.33 |
 |   Register     |     0.136 |    34639 |    126800 |           27.32 |
 |   BUFG         |     0.038 |        5 |        32 |           15.63 |
 |   F7/F8 Muxes  |    <0.001 |    11680 |     63400 |           18.42 |
 |   Others       |     0.000 |       19 |       --- |             --- |
-| Signals        |    19.823 |    49453 |       --- |             --- |
+| Signals        |    20.650 |    49454 |       --- |             --- |
 | Block RAM      |     0.265 |        1 |       135 |            0.74 |
 | DSPs           |    <0.001 |        3 |       240 |            1.25 |
 | I/O            |     0.008 |       35 |       210 |           16.67 |
 | Static Power   |     0.797 |          |           |                 |
-| Total          |    36.971 |          |           |                 |
+| Total          |    37.965 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |    36.715 |      36.152 |      0.563 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |    37.709 |      37.146 |      0.563 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.093 |       0.000 |      0.093 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -141,19 +141,19 @@ Table of Contents
 +--------------------+-----------+
 | Name               | Power (W) |
 +--------------------+-----------+
-| Top                |    36.174 |
-|   clockDiv         |     0.160 |
-|   cpu              |     9.014 |
-|     alu            |     0.198 |
-|     interrupt      |     0.080 |
-|     pipelineRegEX  |     5.588 |
-|     pipelineRegID  |     0.089 |
-|     pipelineRegMEM |     1.670 |
-|     pipelineRegWB  |     0.516 |
-|     regPC          |     0.285 |
-|     regfile        |     0.587 |
-|   display          |     0.511 |
-|     clockDiv       |     0.080 |
+| Top                |    37.167 |
+|   clockDiv         |     0.145 |
+|   cpu              |     9.356 |
+|     alu            |     0.200 |
+|     interrupt      |     0.084 |
+|     pipelineRegEX  |     5.743 |
+|     pipelineRegID  |     0.107 |
+|     pipelineRegMEM |     1.664 |
+|     pipelineRegWB  |     0.554 |
+|     regPC          |     0.369 |
+|     regfile        |     0.633 |
+|   display          |     0.559 |
+|     clockDiv       |     0.076 |
 +--------------------+-----------+
 
 

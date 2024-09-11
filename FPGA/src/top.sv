@@ -80,7 +80,7 @@ module Top(
     
     output [7:0] AN,
     output [7:0] SEG,
-    output [15:0] LED
+    output reg [15:0] LED
 );
     localparam PATH = "C:/Data/HUST_RISC-V_CPU/FPGA/bin/risc-v-benchmark_ccab.hex";
 
@@ -104,4 +104,7 @@ module Top(
 
     assign LED[0] = rst;
     assign LED[1] = halt;
+//    always @(posedge halt) begin
+//        LED[1] <= 1;
+//    end
 endmodule

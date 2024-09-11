@@ -84,7 +84,7 @@ module PipelineCPU(
     PipelineWB WB;
     PipelineReg #($bits(WB)) pipelineRegWB(
         .clk(clk), .rst(rst), .clr(1'b0), .en(!halt), 
-        .din({MEM.PC, MEM.IR, MEM.signal, MEM.rd, MEM.R1, MEM.R2, MEM.imm, MEM.aluResult, readData, EXHalt}),
+        .din({MEM.PC, MEM.IR, MEM.signal, MEM.rd, MEM.R1, MEM.R2, MEM.imm, MEM.aluResult, readData, MEM.halt}),
         .dout(WB)
     );
 
@@ -201,7 +201,7 @@ module PipelineCPU(
         endcase
     end
 
-    Interrupt #(
+    PipelineInterrupt #(
         .WIDTH(WIDTH)
     ) interrupt (
         .clk(clk), .rst(rst), .ecall(EX.signal.irOp == IR_ECALL),
@@ -222,10 +222,10 @@ module PipelineCPU(
     always @(posedge clk) begin
         if (rst) halt <= 0;
     end
-//    always @(posedge WB.halt) begin
-//        halt <= 1;
-//    end
-    assign halt = EXHalt;
+    always @(posedge WB.halt) begin
+        halt <= 1;
+    end
+//    assign halt = EXHalt;
 
     // assign PCOut = PC;
 endmodule
