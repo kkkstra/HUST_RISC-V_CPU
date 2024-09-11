@@ -219,13 +219,13 @@ module PipelineCPU(
     );
 
     // WB
-    always @(posedge clk) begin
-        if (rst) halt <= 0;
-    end
+    // always @(posedge clk) begin
+    //     if (rst) halt <= 0;
+    // end
     always @(posedge WB.halt) begin
         halt <= 1;
     end
-//    assign halt = EXHalt;
+    // assign halt = EXHalt;
 
     // assign PCOut = PC;
 endmodule
