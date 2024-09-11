@@ -85,8 +85,9 @@ module Top(
     localparam PATH = "C:/Data/HUST_RISC-V_CPU/FPGA/bin/risc-v-benchmark_ccab.hex";
 
     // LED
-    wire [31:0] ledData;
-    HexDisplay #(.N(16)) display (CLK, ledData, AN, SEG);
+    wire [31:0] data, ledData, PC;
+    HexDisplay #(.N(16)) display (CLK, data, AN, SEG);
+    assign data = SW[1] ? PC : ledData;
     
     // CPU
     wire clk, rst, halt;
@@ -95,10 +96,10 @@ module Top(
 //    end
     assign rst = ~SW[0];
     ClockDiv #(.N(3_125_000)) clockDiv (CLK, clk);
-    SingleCycleCPU #(
-        .WIDTH(32), .PATH(PATH), .ROM_SIZE(10), .RAM_SIZE(10)
+    PipelineCPU #(
+        .WIDTH(32), .PATH(PATH), .ROM_SIZE(10), .RAM_SIZE(10), .BHB_SIZE(8)
     ) cpu (
-        .clk(clk), .rst(rst), .ledData(ledData), .halt(halt)
+        .clk(clk), .rst(rst), .ledData(ledData), .halt(halt), .debug(PC)
     );
 
     assign LED[0] = rst;

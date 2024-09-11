@@ -14,6 +14,9 @@ module ROM(
     reg [WIDTH-1:0] data [0:(1<<SIZE)-1];
 
     initial begin
+        integer i;
+        for (i = 0; i < (1 << SIZE); ++i)
+            data[i] = 0;
         $readmemh(PATH, data);
     end
 

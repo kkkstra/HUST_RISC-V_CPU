@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Tue Sep 10 13:12:41 2024
-# Process ID: 30976
+# Start of session at: Wed Sep 11 08:41:17 2024
+# Process ID: 53044
 # Current directory: C:/Data/HUST_RISC-V_CPU/FPGA/HUST-RISCV/HUST-RISCV.runs/synth_1
 # Command line: vivado.exe -log Top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top.tcl
 # Log file: C:/Data/HUST_RISC-V_CPU/FPGA/HUST-RISCV/HUST-RISCV.runs/synth_1/Top.vds
@@ -17,8 +17,8 @@
 # CPU Physical cores:12
 # CPU Logical cores :16
 # Host memory       :16892 MB
-# Swap memory       :14438 MB
-# Total Virtual     :31331 MB
-# Available Virtual :5514 MB
+# Swap memory       :16327 MB
+# Total Virtual     :33219 MB
+# Available Virtual :6474 MB
 #-----------------------------------------------------------
 source Top.tcl -notrace

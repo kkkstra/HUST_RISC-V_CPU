@@ -1,0 +1,17 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  --include "../../../../../src" \
+"../../../../../src/alu.sv" \
+"../../../../../src/bhb.sv" \
+"../../../../../src/controller.sv" \
+"../../../../../src/interrupt.sv" \
+"../../../../../src/register.sv" \
+"../../../../../src/pipeline_cpu.sv" \
+"../../../../../src/ram.sv" \
+"../../../../../src/rom.sv" \
+"../../../../../testbench/pipeline_cpu_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

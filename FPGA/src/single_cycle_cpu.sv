@@ -54,7 +54,7 @@ module SingleCycleCPU (
         .rW(rd), .rA(rs1), .rB(rs2), .din(rDin),
         .r1(R1), .r2(R2)
     );
-    always @* begin
+    always @(*) begin
         case (signal.rDinSrc)
             1: rDin = aluResult;
             2: rDin = memData;

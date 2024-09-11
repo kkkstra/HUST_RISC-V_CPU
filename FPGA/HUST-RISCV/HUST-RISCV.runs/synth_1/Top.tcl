@@ -58,8 +58,9 @@ if {$::dispatch::connected} {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
 set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache C:/Users/Patri/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-46300-ThinkBook/incrSyn
+set_param synth.incrementalSynthesisCache C:/Users/Patri/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-33788-ThinkBook/incrSyn
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -84,12 +85,13 @@ set_property file_type "Verilog Header" [get_files C:/Data/HUST_RISC-V_CPU/FPGA/
 set_property file_type "Verilog Header" [get_files C:/Data/HUST_RISC-V_CPU/FPGA/src/controller.svh]
 read_verilog -library xil_defaultlib -sv {
   C:/Data/HUST_RISC-V_CPU/FPGA/src/alu.sv
+  C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv
   C:/Data/HUST_RISC-V_CPU/FPGA/src/controller.sv
   C:/Data/HUST_RISC-V_CPU/FPGA/src/interrupt.sv
-  C:/Data/HUST_RISC-V_CPU/FPGA/src/ram.sv
   C:/Data/HUST_RISC-V_CPU/FPGA/src/register.sv
+  C:/Data/HUST_RISC-V_CPU/FPGA/src/pipeline_cpu.sv
+  C:/Data/HUST_RISC-V_CPU/FPGA/src/ram.sv
   C:/Data/HUST_RISC-V_CPU/FPGA/src/rom.sv
-  C:/Data/HUST_RISC-V_CPU/FPGA/src/single_cycle_cpu.sv
   C:/Data/HUST_RISC-V_CPU/FPGA/src/top.sv
 }
 OPTRACE "Adding files" END { }

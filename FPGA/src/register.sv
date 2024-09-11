@@ -32,7 +32,7 @@ module RegFile(
     assign r2 = regs[rB];
 
     // TODO: change posedge to negedge
-    always @(posedge clk) begin
+    always @(negedge clk) begin
         if (rst) begin
             integer i;
             for (i = 0; i < 32; ++i) begin
@@ -44,3 +44,52 @@ module RegFile(
         end
     end
 endmodule
+
+module PipelineReg (
+    clk, rst, clr, en, din, dout
+);
+    parameter WIDTH;
+
+    input clk, rst, clr, en;
+    input [WIDTH-1:0] din;
+    output reg [WIDTH-1:0] dout;
+
+    always @(posedge clk) begin
+        if (clr || rst) dout <= 0;
+        else if (en) dout <= din;
+    end
+endmodule
+
+
+typedef struct packed {
+    logic [31:0] PC, IR;
+    logic predictJump;
+} PipelineID;
+
+typedef struct packed {
+    logic [31:0] PC, IR;
+    Signal signal;
+    logic [4:0] rd;
+    logic [31:0] R1, R2, imm;
+    logic [1:0] r1Forward, r2Forward;
+    logic predictJump;
+} PipelineEX;
+
+typedef struct packed {
+    logic [31:0] PC, IR;
+    Signal signal;
+    logic [4:0] rd;
+    logic [31:0] R1, R2, imm;
+    logic [31:0] aluResult;
+    logic halt;
+} PipelineMEM;
+
+typedef struct packed {
+    logic [31:0] PC, IR;
+    Signal signal;
+    logic [4:0] rd;
+    logic [31:0] R1, R2, imm;
+    logic [31:0] aluResult;
+    logic [31:0] readData;
+    logic halt;
+} PipelineWB;
