@@ -96,11 +96,16 @@ module Top(
 //    end
     assign rst = ~SW[0];
     ClockDiv #(.N(3_125_000)) clockDiv (CLK, clk);
-    PipelineCPU #(
-        .WIDTH(32), .PATH(PATH), .ROM_SIZE(10), .RAM_SIZE(10), .BHB_SIZE(8)
+    SingleCycleCPU #(
+        .WIDTH(32), .PATH(PATH), .ROM_SIZE(10), .RAM_SIZE(10)
     ) cpu (
-        .clk(clk), .rst(rst), .ledData(ledData), .halt(halt), .debug(PC)
+        .clk(clk), .rst(rst), .ledData(ledData), .halt(halt)
     );
+//    PipelineCPU #(
+//        .WIDTH(32), .PATH(PATH), .ROM_SIZE(10), .RAM_SIZE(10), .BHB_SIZE(8)
+//    ) cpu (
+//        .clk(clk), .rst(rst), .ledData(ledData), .halt(halt), .debug(PC)
+//    );
 
     assign LED[0] = rst;
     assign LED[1] = halt;

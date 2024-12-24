@@ -23,7 +23,7 @@ module BHB(
 
     always @(*) begin
         integer i, maxTimer, maxTimerIndex;
-        bit found, hit, miss, out;
+        bit found, hit, miss;
         hit = 0;
         for (i = 0; i < SIZE; ++i) begin
             if (valid[i] && EXPC == tag[i]) begin
@@ -60,19 +60,15 @@ module BHB(
             for (i = SIZE - 1; i >= 0; --i) write[i] = 0;
         end
         
-        out = 0;
+        jumpAddr = 0;
+        predictJump = 0;
         for (i = 0; i < SIZE; ++i) begin
             if (valid[i] && PC == tag[i]) begin
                 load[i] = 1;
-                out = 1;
                 jumpAddr = addr[i];
                 predictJump = predict[i][1];
             end
             else load[i] = 0;
-        end
-        if (!out) begin
-            jumpAddr = 0;
-            predictJump = 0;
         end
     end
 
@@ -85,7 +81,6 @@ module BHB(
                 timer[i] <= 0;
                 predict[i] <= 0;
                 addr[i] <= 0;
-                write[i] <= 0;
             end
         end
         else begin

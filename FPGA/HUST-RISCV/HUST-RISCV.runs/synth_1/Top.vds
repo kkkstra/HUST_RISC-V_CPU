@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Wed Sep 11 09:13:31 2024
-# Process ID: 4264
+# Start of session at: Thu Sep 12 01:04:46 2024
+# Process ID: 52448
 # Current directory: C:/Data/HUST_RISC-V_CPU/FPGA/HUST-RISCV/HUST-RISCV.runs/synth_1
 # Command line: vivado.exe -log Top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top.tcl
 # Log file: C:/Data/HUST_RISC-V_CPU/FPGA/HUST-RISCV/HUST-RISCV.runs/synth_1/Top.vds
@@ -17,16 +17,16 @@
 # CPU Physical cores:12
 # CPU Logical cores :16
 # Host memory       :16892 MB
-# Swap memory       :8165 MB
-# Total Virtual     :25057 MB
-# Available Virtual :4133 MB
+# Swap memory       :11702 MB
+# Total Virtual     :28594 MB
+# Available Virtual :5697 MB
 #-----------------------------------------------------------
 source Top.tcl -notrace
-create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 503.812 ; gain = 200.984
+create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 503.344 ; gain = 200.992
 Command: read_checkpoint -auto_incremental -incremental C:/Data/HUST_RISC-V_CPU/FPGA/HUST-RISCV/HUST-RISCV.srcs/utils_1/imports/synth_1/Top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Data/HUST_RISC-V_CPU/FPGA/HUST-RISCV/HUST-RISCV.srcs/utils_1/imports/synth_1/Top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
-read_checkpoint: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 507.898 ; gain = 4.086
+read_checkpoint: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 507.965 ; gain = 4.621
 Command: synth_design -top Top -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
@@ -35,9 +35,9 @@ INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Device 21-9227] Part: xc7a100tcsg324-1 does not have CEAM library.
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 51188
+INFO: [Synth 8-7075] Helper process launched with PID 41064
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1372.852 ; gain = 447.426
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1372.023 ; gain = 446.914
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-9661] initial value of parameter 'WIDTH' is omitted [C:/Data/HUST_RISC-V_CPU/FPGA/src/register.sv:51]
 INFO: [Synth 8-6157] synthesizing module 'Top' [C:/Data/HUST_RISC-V_CPU/FPGA/src/top.sv:76]
@@ -93,7 +93,6 @@ INFO: [Synth 8-6157] synthesizing module 'RegFile' [C:/Data/HUST_RISC-V_CPU/FPGA
 INFO: [Synth 8-6155] done synthesizing module 'RegFile' (0#1) [C:/Data/HUST_RISC-V_CPU/FPGA/src/register.sv:17]
 INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Data/HUST_RISC-V_CPU/FPGA/src/alu.sv:6]
 	Parameter WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Data/HUST_RISC-V_CPU/FPGA/src/alu.sv:17]
 INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [C:/Data/HUST_RISC-V_CPU/FPGA/src/alu.sv:6]
 WARNING: [Synth 8-7071] port 'result2' of module 'ALU' is unconnected for instance 'alu' [C:/Data/HUST_RISC-V_CPU/FPGA/src/pipeline_cpu.sv:187]
 WARNING: [Synth 8-7071] port 'equal' of module 'ALU' is unconnected for instance 'alu' [C:/Data/HUST_RISC-V_CPU/FPGA/src/pipeline_cpu.sv:187]
@@ -107,10 +106,22 @@ INFO: [Synth 8-6157] synthesizing module 'RAM' [C:/Data/HUST_RISC-V_CPU/FPGA/src
 	Parameter WIDTH bound to: 32 - type: integer 
 	Parameter SIZE bound to: 10 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'RAM' (0#1) [C:/Data/HUST_RISC-V_CPU/FPGA/src/ram.sv:3]
-WARNING: [Synth 8-689] width (32) of port connection 'addr' does not match port width (12) of module 'RAM' [C:/Data/HUST_RISC-V_CPU/FPGA/src/pipeline_cpu.sv:218]
 INFO: [Synth 8-6155] done synthesizing module 'PipelineCPU' (0#1) [C:/Data/HUST_RISC-V_CPU/FPGA/src/pipeline_cpu.sv:21]
-WARNING: [Synth 8-689] width (32) of port connection 'debug' does not match port width (1) of module 'PipelineCPU' [C:/Data/HUST_RISC-V_CPU/FPGA/src/top.sv:102]
 INFO: [Synth 8-6155] done synthesizing module 'Top' (0#1) [C:/Data/HUST_RISC-V_CPU/FPGA/src/top.sv:76]
+WARNING: [Synth 8-7129] Port LED[15] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[14] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[13] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[12] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[11] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[10] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[9] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[8] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[7] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[6] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[5] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[4] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[3] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[2] in module Top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SW[15] in module Top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SW[14] in module Top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SW[13] in module Top is either unconnected or has no load
@@ -126,18 +137,18 @@ WARNING: [Synth 8-7129] Port SW[4] in module Top is either unconnected or has no
 WARNING: [Synth 8-7129] Port SW[3] in module Top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SW[2] in module Top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:17 . Memory (MB): peak = 2259.348 ; gain = 1333.922
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:16 . Memory (MB): peak = 2258.953 ; gain = 1333.844
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:18 . Memory (MB): peak = 2259.348 ; gain = 1333.922
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:17 . Memory (MB): peak = 2258.953 ; gain = 1333.844
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:18 . Memory (MB): peak = 2259.348 ; gain = 1333.922
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:17 . Memory (MB): peak = 2258.953 ; gain = 1333.844
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 2259.348 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:02 . Memory (MB): peak = 2258.953 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -148,45 +159,44 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/Top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 2488.617 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2493.797 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.194 . Memory (MB): peak = 2488.617 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.180 . Memory (MB): peak = 2493.797 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:42 . Memory (MB): peak = 2488.617 ; gain = 1563.191
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:39 . Memory (MB): peak = 2493.797 ; gain = 1568.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:42 . Memory (MB): peak = 2488.617 ; gain = 1563.191
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:39 . Memory (MB): peak = 2493.797 ; gain = 1568.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:42 . Memory (MB): peak = 2488.617 ; gain = 1563.191
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:39 . Memory (MB): peak = 2493.797 ; gain = 1568.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Preparing Guide Design
 ---------------------------------------------------------------------------------
+got a mismatch PipelineCPU
+Is not a child genome
 WARNING: [Synth 8-6702] IncrSynth : Design change found in an area of the design that prevents previous synthesis information being used, Reverting to default synthesis
 ---------------------------------------------------------------------------------
-Finished Doing Graph Differ : Time (s): cpu = 00:00:22 ; elapsed = 00:00:47 . Memory (MB): peak = 2488.617 ; gain = 1563.191
+Finished Doing Graph Differ : Time (s): cpu = 00:00:15 ; elapsed = 00:00:43 . Memory (MB): peak = 2493.797 ; gain = 1568.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Preparing Guide Design : Time (s): cpu = 00:00:22 ; elapsed = 00:00:47 . Memory (MB): peak = 2488.617 ; gain = 1563.191
+Finished Preparing Guide Design : Time (s): cpu = 00:00:15 ; elapsed = 00:00:43 . Memory (MB): peak = 2493.797 ; gain = 1568.688
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'predictJump_reg' [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:69]
-WARNING: [Synth 8-327] inferring latch for variable 'jumpAddr_reg' [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:68]
-WARNING: [Synth 8-327] inferring latch for variable 'result_reg' [C:/Data/HUST_RISC-V_CPU/FPGA/src/alu.sv:18]
 WARNING: [Synth 8-327] inferring latch for variable 'result2_reg' [C:/Data/HUST_RISC-V_CPU/FPGA/src/alu.sv:21]
 WARNING: [Synth 8-327] inferring latch for variable 'ge_reg' [C:/Data/HUST_RISC-V_CPU/FPGA/src/alu.sv:32]
 WARNING: [Synth 8-327] inferring latch for variable 'less_reg' [C:/Data/HUST_RISC-V_CPU/FPGA/src/alu.sv:31]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:55 ; elapsed = 00:02:19 . Memory (MB): peak = 2488.617 ; gain = 1563.191
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:40 ; elapsed = 00:02:04 . Memory (MB): peak = 2493.797 ; gain = 1568.688
 ---------------------------------------------------------------------------------
 
 
@@ -216,11 +226,10 @@ Detailed RTL Component Info :
 	              198 Bit    Registers := 1     
 	               65 Bit    Registers := 1     
 	               32 Bit    Registers := 1075  
-	               16 Bit    Registers := 1     
 	                8 Bit    Registers := 1     
 	                4 Bit    Registers := 2     
 	                2 Bit    Registers := 8     
-	                1 Bit    Registers := 18    
+	                1 Bit    Registers := 10    
 +---Muxes : 
 	   2 Input   32 Bit        Muxes := 5136  
 	   4 Input   32 Bit        Muxes := 1025  
@@ -237,7 +246,7 @@ Detailed RTL Component Info :
 	   5 Input    2 Bit        Muxes := 8     
 	   4 Input    2 Bit        Muxes := 8     
 	   2 Input    1 Bit        Muxes := 95    
-	  14 Input    1 Bit        Muxes := 5     
+	  14 Input    1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -253,6 +262,20 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-7129] Port LED[15] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[14] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[13] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[12] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[11] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[10] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[9] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[8] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[7] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[6] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[5] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[4] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[3] in module Top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LED[2] in module Top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SW[15] in module Top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SW[14] in module Top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SW[13] in module Top is either unconnected or has no load
@@ -275,18 +298,18 @@ INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too spar
 INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
-DSP Report: Generating DSP result0, operation Mode is: A*B.
-DSP Report: operator result0 is absorbed into DSP result0.
-DSP Report: operator result0 is absorbed into DSP result0.
-DSP Report: Generating DSP result0, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator result0 is absorbed into DSP result0.
-DSP Report: operator result0 is absorbed into DSP result0.
-DSP Report: Generating DSP result0, operation Mode is: A*B.
-DSP Report: operator result0 is absorbed into DSP result0.
-DSP Report: operator result0 is absorbed into DSP result0.
-DSP Report: Generating DSP result0, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator result0 is absorbed into DSP result0.
-DSP Report: operator result0 is absorbed into DSP result0.
+DSP Report: Generating DSP result20, operation Mode is: A*B.
+DSP Report: operator result20 is absorbed into DSP result20.
+DSP Report: operator result20 is absorbed into DSP result20.
+DSP Report: Generating DSP result20, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator result20 is absorbed into DSP result20.
+DSP Report: operator result20 is absorbed into DSP result20.
+DSP Report: Generating DSP result20, operation Mode is: A*B.
+DSP Report: operator result20 is absorbed into DSP result20.
+DSP Report: operator result20 is absorbed into DSP result20.
+DSP Report: Generating DSP result20, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator result20 is absorbed into DSP result20.
+DSP Report: operator result20 is absorbed into DSP result20.
 INFO: [Synth 8-3886] merging instance 'pipelineRegEX/dout_reg[24]' (FDRE) to 'pipelineRegEX/dout_reg[25]'
 INFO: [Synth 8-3886] merging instance 'pipelineRegMEM/dout_reg[53]' (FDRE) to 'pipelineRegMEM/dout_reg[52]'
 INFO: [Synth 8-3886] merging instance 'pipelineRegWB/dout_reg[85]' (FDRE) to 'pipelineRegWB/dout_reg[84]'
@@ -326,202 +349,6 @@ INFO: [Synth 8-3886] merging instance 'pipelineRegWB/dout_reg[89]' (FDRE) to 'pi
 INFO: [Synth 8-3886] merging instance 'pipelineRegWB/dout_reg[91]' (FDRE) to 'pipelineRegWB/dout_reg[84]'
 INFO: [Synth 8-3886] merging instance 'pipelineRegWB/dout_reg[93]' (FDRE) to 'pipelineRegWB/dout_reg[84]'
 INFO: [Synth 8-3886] merging instance 'pipelineRegWB/dout_reg[95]' (FDRE) to 'pipelineRegWB/dout_reg[84]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[0][1]' (FDRE) to 'bhb/addr_reg[1][1]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[1] )
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[1][1]' (FDRE) to 'bhb/addr_reg[3][1]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[2][1]' (FDRE) to 'bhb/addr_reg[3][1]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[3][1]' (FDRE) to 'bhb/addr_reg[5][1]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[4][1]' (FDRE) to 'bhb/addr_reg[5][1]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[5][1]' (FDRE) to 'bhb/addr_reg[7][1]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[6][1]' (FDRE) to 'bhb/addr_reg[7][1]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][1] )
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[0][12]' (FDRE) to 'bhb/addr_reg[1][12]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[12] )
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[1][12]' (FDRE) to 'bhb/addr_reg[3][12]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[2][12]' (FDRE) to 'bhb/addr_reg[3][12]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[3][12]' (FDRE) to 'bhb/addr_reg[5][12]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[4][12]' (FDRE) to 'bhb/addr_reg[5][12]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[5][12]' (FDRE) to 'bhb/addr_reg[7][12]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[6][12]' (FDRE) to 'bhb/addr_reg[7][12]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][12] )
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[0][13]' (FDRE) to 'bhb/addr_reg[1][13]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[13] )
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[1][13]' (FDRE) to 'bhb/addr_reg[3][13]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[2][13]' (FDRE) to 'bhb/addr_reg[3][13]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[3][13]' (FDRE) to 'bhb/addr_reg[5][13]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[4][13]' (FDRE) to 'bhb/addr_reg[5][13]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[5][13]' (FDRE) to 'bhb/addr_reg[7][13]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[6][13]' (FDRE) to 'bhb/addr_reg[7][13]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][13] )
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[0][14]' (FDRE) to 'bhb/addr_reg[1][14]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[14] )
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[1][14]' (FDRE) to 'bhb/addr_reg[3][14]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[2][14]' (FDRE) to 'bhb/addr_reg[3][14]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[3][14]' (FDRE) to 'bhb/addr_reg[5][14]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[4][14]' (FDRE) to 'bhb/addr_reg[5][14]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[5][14]' (FDRE) to 'bhb/addr_reg[7][14]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[6][14]' (FDRE) to 'bhb/addr_reg[7][14]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][14] )
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[0][15]' (FDRE) to 'bhb/addr_reg[1][15]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[15] )
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[1][15]' (FDRE) to 'bhb/addr_reg[3][15]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[2][15]' (FDRE) to 'bhb/addr_reg[3][15]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[3][15]' (FDRE) to 'bhb/addr_reg[5][15]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[4][15]' (FDRE) to 'bhb/addr_reg[5][15]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[5][15]' (FDRE) to 'bhb/addr_reg[7][15]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[6][15]' (FDRE) to 'bhb/addr_reg[7][15]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][15] )
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[0][16]' (FDRE) to 'bhb/addr_reg[1][16]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[16] )
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[1][16]' (FDRE) to 'bhb/addr_reg[3][16]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[2][16]' (FDRE) to 'bhb/addr_reg[3][16]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[3][16]' (FDRE) to 'bhb/addr_reg[5][16]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[4][16]' (FDRE) to 'bhb/addr_reg[5][16]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[5][16]' (FDRE) to 'bhb/addr_reg[7][16]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[6][16]' (FDRE) to 'bhb/addr_reg[7][16]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][16] )
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[0][17]' (FDRE) to 'bhb/addr_reg[1][17]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[17] )
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[1][17]' (FDRE) to 'bhb/addr_reg[3][17]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[2][17]' (FDRE) to 'bhb/addr_reg[3][17]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[3][17]' (FDRE) to 'bhb/addr_reg[5][17]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[4][17]' (FDRE) to 'bhb/addr_reg[5][17]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[5][17]' (FDRE) to 'bhb/addr_reg[7][17]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[6][17]' (FDRE) to 'bhb/addr_reg[7][17]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][17] )
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[0][18]' (FDRE) to 'bhb/addr_reg[1][18]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[18] )
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[1][18]' (FDRE) to 'bhb/addr_reg[3][18]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[2][18]' (FDRE) to 'bhb/addr_reg[3][18]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[3][18]' (FDRE) to 'bhb/addr_reg[5][18]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[4][18]' (FDRE) to 'bhb/addr_reg[5][18]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[5][18]' (FDRE) to 'bhb/addr_reg[7][18]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[6][18]' (FDRE) to 'bhb/addr_reg[7][18]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][18] )
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[0][19]' (FDRE) to 'bhb/addr_reg[1][19]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[19] )
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[1][19]' (FDRE) to 'bhb/addr_reg[3][19]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[2][19]' (FDRE) to 'bhb/addr_reg[3][19]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[3][19]' (FDRE) to 'bhb/addr_reg[5][19]'
-INFO: [Synth 8-3886] merging instance 'bhb/addr_reg[4][19]' (FDRE) to 'bhb/addr_reg[5][19]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][19] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[20] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][20] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[21] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][21] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[22] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][22] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[23] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][23] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[24] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][24] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[25] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][25] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[26] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][26] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[27] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][27] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[28] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][28] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[29] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][29] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[30] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][30] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[31] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][31] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\addr_reg[7][11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\predict_reg[1][0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\predict_reg[2][0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\predict_reg[3][0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\predict_reg[4][0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\predict_reg[5][0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\predict_reg[6][0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\predict_reg[1][1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\predict_reg[2][1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\predict_reg[3][1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\predict_reg[4][1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\predict_reg[5][1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\predict_reg[6][1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/\jumpAddr_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (bhb/predictJump_reg)
-WARNING: [Synth 8-3332] Sequential element (predictJump_reg) is unused and will be removed from module BHB.
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'bhb/write_reg[7]/Q' [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'bhb/write_reg[0]/Q' [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'bhb/write_reg[1]/Q' [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'bhb/write_reg[2]/Q' [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'bhb/write_reg[3]/Q' [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'bhb/write_reg[4]/Q' [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'bhb/write_reg[5]/Q' [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'bhb/write_reg[6]/Q' [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Data/HUST_RISC-V_CPU/FPGA/src/bhb.sv:88]
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[31]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[30]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[29]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[28]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[27]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[26]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[25]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[24]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[23]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[22]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[21]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[20]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[19]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[18]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[17]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[16]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[15]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[14]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[13]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[12]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[11]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[10]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[9]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[8]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[7]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[6]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[5]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[4]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[3]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[2]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[1]) is unused and will be removed from module BHB.
-WARNING: [Synth 8-3332] Sequential element (jumpAddr_reg[0]) is unused and will be removed from module BHB.
 WARNING: [Synth 8-3332] Sequential element (result2_reg[31]) is unused and will be removed from module ALU.
 WARNING: [Synth 8-3332] Sequential element (result2_reg[30]) is unused and will be removed from module ALU.
 WARNING: [Synth 8-3332] Sequential element (result2_reg[29]) is unused and will be removed from module ALU.
@@ -560,12 +387,12 @@ CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin '
 CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Data/HUST_RISC-V_CPU/FPGA/src/pipeline_cpu.sv:65]
 CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Data/HUST_RISC-V_CPU/FPGA/src/pipeline_cpu.sv:65]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:42 ; elapsed = 00:03:48 . Memory (MB): peak = 2488.617 ; gain = 1563.191
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:25 ; elapsed = 00:03:36 . Memory (MB): peak = 2493.797 ; gain = 1568.688
 ---------------------------------------------------------------------------------
- Sort Area is PipelineCPU__GC0 result0_0 : 0 0 : 2701 5044 : Used 1 time 0
- Sort Area is PipelineCPU__GC0 result0_0 : 0 1 : 2343 5044 : Used 1 time 0
- Sort Area is PipelineCPU__GC0 result0_3 : 0 0 : 2339 4365 : Used 1 time 0
- Sort Area is PipelineCPU__GC0 result0_3 : 0 1 : 2026 4365 : Used 1 time 0
+ Sort Area is PipelineCPU__GC0 result20_0 : 0 0 : 2701 5044 : Used 1 time 0
+ Sort Area is PipelineCPU__GC0 result20_0 : 0 1 : 2343 5044 : Used 1 time 0
+ Sort Area is PipelineCPU__GC0 result20_3 : 0 0 : 2339 4365 : Used 1 time 0
+ Sort Area is PipelineCPU__GC0 result20_3 : 0 1 : 2026 4365 : Used 1 time 0
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
@@ -596,19 +423,51 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:47 ; elapsed = 00:03:58 . Memory (MB): peak = 2488.617 ; gain = 1563.191
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:29 ; elapsed = 00:03:45 . Memory (MB): peak = 2493.797 ; gain = 1568.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:48 ; elapsed = 00:04:01 . Memory (MB): peak = 2488.617 ; gain = 1563.191
+Finished Timing Optimization : Time (s): cpu = 00:01:31 ; elapsed = 00:03:50 . Memory (MB): peak = 2493.797 ; gain = 1568.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cpui_38/\cpu/regfile/regs_reg[0][17] )
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:52 ; elapsed = 00:04:09 . Memory (MB): peak = 2488.617 ; gain = 1563.191
+Finished Technology Mapping : Time (s): cpu = 00:01:37 ; elapsed = 00:04:02 . Memory (MB): peak = 2493.797 ; gain = 1568.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -626,37 +485,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:59 ; elapsed = 00:04:27 . Memory (MB): peak = 2488.617 ; gain = 1563.191
+Finished IO Insertion : Time (s): cpu = 00:01:39 ; elapsed = 00:04:19 . Memory (MB): peak = 2493.797 ; gain = 1568.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:59 ; elapsed = 00:04:27 . Memory (MB): peak = 2488.617 ; gain = 1563.191
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:39 ; elapsed = 00:04:19 . Memory (MB): peak = 2493.797 ; gain = 1568.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:01 ; elapsed = 00:04:30 . Memory (MB): peak = 2488.617 ; gain = 1563.191
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:39 ; elapsed = 00:04:22 . Memory (MB): peak = 2493.797 ; gain = 1568.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:01 ; elapsed = 00:04:30 . Memory (MB): peak = 2488.617 ; gain = 1563.191
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:39 ; elapsed = 00:04:22 . Memory (MB): peak = 2493.797 ; gain = 1568.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:02 ; elapsed = 00:04:31 . Memory (MB): peak = 2488.617 ; gain = 1563.191
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:39 ; elapsed = 00:04:23 . Memory (MB): peak = 2493.797 ; gain = 1568.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:02 ; elapsed = 00:04:31 . Memory (MB): peak = 2488.617 ; gain = 1563.191
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:39 ; elapsed = 00:04:23 . Memory (MB): peak = 2493.797 ; gain = 1568.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -682,49 +541,48 @@ Report Cell Usage:
 +------+---------+------+
 |      |Cell     |Count |
 +------+---------+------+
-|1     |BUFG     |     4|
-|2     |CARRY4   |   370|
+|1     |BUFG     |     3|
+|2     |CARRY4   |   510|
 |3     |DSP48E1  |     3|
-|4     |LUT1     |    68|
-|5     |LUT2     |   705|
-|6     |LUT3     |  1809|
-|7     |LUT4     |   998|
-|8     |LUT5     |  1958|
-|9     |LUT6     | 22314|
-|10    |MUXF7    |  7872|
+|4     |LUT1     |    77|
+|5     |LUT2     |   721|
+|6     |LUT3     |  1891|
+|7     |LUT4     |  1130|
+|8     |LUT5     |  2127|
+|9     |LUT6     | 22709|
+|10    |MUXF7    |  7904|
 |11    |MUXF8    |  3808|
 |12    |RAMB36E1 |     1|
-|13    |FDRE     | 34599|
+|13    |FDRE     | 35392|
 |14    |FDSE     |     8|
-|15    |LD       |    32|
-|16    |IBUF     |     3|
-|17    |OBUF     |    32|
+|15    |IBUF     |     3|
+|16    |OBUF     |    18|
+|17    |OBUFT    |    14|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:02 ; elapsed = 00:04:31 . Memory (MB): peak = 2488.617 ; gain = 1563.191
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:39 ; elapsed = 00:04:23 . Memory (MB): peak = 2493.797 ; gain = 1568.688
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 27 critical warnings and 88 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:46 ; elapsed = 00:04:16 . Memory (MB): peak = 2488.617 ; gain = 1333.922
-Synthesis Optimization Complete : Time (s): cpu = 00:02:02 ; elapsed = 00:04:32 . Memory (MB): peak = 2488.617 ; gain = 1563.191
+Synthesis finished with 0 errors, 3 critical warnings and 66 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:28 ; elapsed = 00:04:09 . Memory (MB): peak = 2493.797 ; gain = 1333.844
+Synthesis Optimization Complete : Time (s): cpu = 00:01:39 ; elapsed = 00:04:24 . Memory (MB): peak = 2493.797 ; gain = 1568.688
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.652 . Memory (MB): peak = 2488.617 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 12086 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.622 . Memory (MB): peak = 2493.797 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 12226 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 2488.617 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 2493.797 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 32 instances were transformed.
-  LD => LDCE: 32 instances
+No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 2eb3cf2e
+Synth Design complete | Checksum: 67fce477
 INFO: [Common 17-83] Releasing license: Synthesis
-245 Infos, 110 Warnings, 27 Critical Warnings and 0 Errors encountered.
+137 Infos, 100 Warnings, 3 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:15 ; elapsed = 00:05:03 . Memory (MB): peak = 2488.617 ; gain = 1980.719
+synth_design: Time (s): cpu = 00:01:51 ; elapsed = 00:04:54 . Memory (MB): peak = 2493.797 ; gain = 1985.832
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.081 . Memory (MB): peak = 2488.617 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.084 . Memory (MB): peak = 2493.797 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Data/HUST_RISC-V_CPU/FPGA/HUST-RISCV/HUST-RISCV.runs/synth_1/Top.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 2488.617 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 2493.797 ; gain = 0.000
 INFO: [Vivado 12-24828] Executing command : report_utilization -file Top_utilization_synth.rpt -pb Top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Sep 11 09:18:58 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Sep 12 01:10:02 2024...

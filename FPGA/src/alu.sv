@@ -36,6 +36,7 @@ module ALU(
                 less = (X < Y);
                 ge = ~less;
             end
+            default: result = 0;
         endcase
         equal = (X == Y);
     end

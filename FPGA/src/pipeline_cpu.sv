@@ -31,7 +31,7 @@ module PipelineCPU(
     input clk, rst;
     output reg halt;
     output [31:0] ledData;
-    output debug;
+    output [31:0] debug;
 
     // IF
     wire [WIDTH-1:0] PC, IR;
@@ -62,28 +62,28 @@ module PipelineCPU(
     // Pipeline
     PipelineID ID;
     PipelineReg #($bits(ID)) pipelineRegID(
-        .clk(clk), .rst(rst), .clr(predictError), .en(!halt && !loadUse), 
+        .clk(clk), .rst(rst), .clr(predictError), .en((~halt) & (~loadUse)), 
         .din({PC, IR, predictJump}),
         .dout(ID)
     );
 
     PipelineEX EX;
     PipelineReg #($bits(EX)) pipelineRegEX(
-        .clk(clk), .rst(rst), .clr(loadUse || predictError), .en(!halt), 
+        .clk(clk), .rst(rst), .clr(loadUse || predictError), .en(~halt), 
         .din({ID.PC, ID.IR, signal, rd, R1, R2, imm, r1Forward, r2Forward, ID.predictJump}),
         .dout(EX)
     );
 
     PipelineMEM MEM;
     PipelineReg #($bits(MEM)) pipelineRegMEM(
-        .clk(clk), .rst(rst), .clr(1'b0), .en(!halt), 
+        .clk(clk), .rst(rst), .clr(1'b0), .en(~halt), 
         .din({EX.PC, EX.IR, EX.signal, EX.rd, realR1, realR2, EX.imm, aluResult, EXHalt}),
         .dout(MEM)
     );
 
     PipelineWB WB;
     PipelineReg #($bits(WB)) pipelineRegWB(
-        .clk(clk), .rst(rst), .clr(1'b0), .en(!halt), 
+        .clk(clk), .rst(rst), .clr(1'b0), .en(~halt), 
         .din({MEM.PC, MEM.IR, MEM.signal, MEM.rd, MEM.R1, MEM.R2, MEM.imm, MEM.aluResult, readData, MEM.halt}),
         .dout(WB)
     );
@@ -93,7 +93,7 @@ module PipelineCPU(
     Register #(
         .WIDTH(WIDTH)
     ) regPC (
-        .clk(clk), .rst(rst), .en(!halt && !loadUse), .din(PCNext), .dout(PC)
+        .clk(clk), .rst(rst), .en((~halt) & (~loadUse)), .din(PCNext), .dout(PC)
     );
     
     assign debug = PC;
@@ -201,13 +201,22 @@ module PipelineCPU(
         endcase
     end
 
-    PipelineInterrupt #(
-        .WIDTH(WIDTH)
-    ) interrupt (
-        .clk(clk), .rst(rst), .ecall(EX.signal.irOp == IR_ECALL),
-        .R1(realR1), .R2(realR2),
-        .ledData(ledData), .halt(EXHalt)
-    );
+   PipelineInterrupt #(
+       .WIDTH(WIDTH)
+   ) interrupt (
+       .clk(clk), .rst(rst), .ecall(EX.signal.irOp == IR_ECALL),
+       .R1(realR1), .R2(realR2),
+       .ledData(ledData), .halt(EXHalt)
+   );
+    
+    // Interrupt #(
+    //     .WIDTH(WIDTH)
+    // ) interrupt (
+    //     .clk(clk), .rst(rst), .ecall(WB.signal.irOp == IR_ECALL),
+    //     .R1(WB.R1), .R2(WB.R2),
+    //     .ledData(ledData), .halt(halt)
+    // );
+    // // assign halt = ledData == 'h38;
 
     // MEM
     RAM #(
@@ -215,17 +224,15 @@ module PipelineCPU(
         .SIZE(RAM_SIZE)
     ) ram (
         .clk(clk), .rst(rst), .we(MEM.signal.store),
-        .mode(MEM.signal.ramMode), .addr(MEM.aluResult), .din(MEM.R2), .dout(readData)
+        .mode(MEM.signal.ramMode), .addr(MEM.aluResult[11:0]), .din(MEM.R2), .dout(readData)
     );
 
     // WB
-    always @(posedge clk) begin
-        if (rst) halt <= 0;
-    end
-    always @(posedge WB.halt) begin
-        halt <= 1;
-    end
-//    assign halt = EXHalt;
+   always @(posedge clk) begin
+       if (rst) halt <= 0;
+   end
+   always @(posedge WB.halt) begin
+       halt <= 1;
+   end
 
-    // assign PCOut = PC;
 endmodule
